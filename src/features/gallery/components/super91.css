@@ -1,0 +1,539 @@
+/* =========================================================================
+   SUPER91 EXACT LUXURY CARD STYLES & RETIVAA GALLERY MORPH
+   Exact recreation of Super91.com homepage cards, physics, and hover dynamics
+   ========================================================================= */
+
+@property --service-section-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #f6efe3;
+}
+
+/* 1. Dynamic Morph Container */
+.super91-morph-container {
+  --service-section-color: #f6efe3;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #f6efe3;
+  background-image: radial-gradient(
+    ellipse at 50% 40%,
+    color-mix(in srgb, var(--service-section-color) 24%, #f6efe3) 0%,
+    color-mix(in srgb, var(--service-section-color) 16%, #f6efe3) 35%,
+    color-mix(in srgb, var(--service-section-color) 8%, #f6efe3) 65%,
+    #f6efe3 100%
+  );
+  transition: --service-section-color 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: --service-section-color;
+}
+
+/* 2. Hero Watermark & Header */
+.super91-hero-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 40px 24px 30px;
+  text-align: center;
+  position: relative;
+  isolation: isolate;
+}
+
+@media (min-width: 768px) {
+  .super91-hero-wrapper {
+    padding: 50px 36px 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .super91-hero-wrapper {
+    padding: 60px 48px 50px;
+  }
+}
+
+.super91-hero-watermark {
+  position: absolute;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25em;
+  text-align: center;
+  top: 10px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  transform: none;
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: clamp(4.5rem, 14vw, 13rem);
+  font-weight: 800;
+  line-height: 0.82;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  color: #30251f;
+  opacity: 0.06;
+  margin: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* 3. Cards Grid Layout: Exactly 3 boxes in front row & 2 boxes in second row */
+.super91-cards-grid {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 1540px;
+  margin: 0 auto;
+  padding: 24px 12px;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base (mobile): 1 column */
+.super91-cards-grid .super91-card {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+/* Tablet (2 columns): cards share space */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .super91-cards-grid .super91-card {
+    flex: 0 0 calc(50% - 14px);
+    max-width: calc(50% - 14px);
+  }
+}
+
+/* Desktop: EXACTLY 3 boxes in Row 1, 2 boxes in Row 2 */
+@media (min-width: 1024px) {
+  .super91-cards-grid {
+    gap: 28px;
+    padding: 30px 16px;
+  }
+
+  /* First 3 cards: 33.333% width each -> forms Row 1 */
+  .super91-cards-grid .super91-card:nth-child(1),
+  .super91-cards-grid .super91-card:nth-child(2),
+  .super91-cards-grid .super91-card:nth-child(3) {
+    flex: 0 0 calc(33.333% - 19px);
+    max-width: calc(33.333% - 19px);
+  }
+
+  /* Next 2 cards: balanced in Row 2, centered nicely */
+  .super91-cards-grid .super91-card:nth-child(4),
+  .super91-cards-grid .super91-card:nth-child(5) {
+    flex: 0 0 calc(38% - 14px);
+    max-width: calc(38% - 14px);
+  }
+}
+
+@media (min-width: 1440px) {
+  .super91-cards-grid {
+    gap: 32px;
+  }
+
+  .super91-cards-grid .super91-card:nth-child(1),
+  .super91-cards-grid .super91-card:nth-child(2),
+  .super91-cards-grid .super91-card:nth-child(3) {
+    flex: 0 0 calc(33.333% - 22px);
+    max-width: calc(33.333% - 22px);
+  }
+
+  .super91-cards-grid .super91-card:nth-child(4),
+  .super91-cards-grid .super91-card:nth-child(5) {
+    flex: 0 0 calc(38% - 16px);
+    max-width: calc(38% - 16px);
+  }
+}
+
+/* If exactly 4 cards: 2x2 on desktop and 4 across on extra-large screens */
+@media (min-width: 1024px) {
+  .super91-cards-grid:has(.super91-card:nth-child(4):last-child) .super91-card {
+    flex: 0 0 calc(50% - 16px) !important;
+    max-width: calc(50% - 16px) !important;
+  }
+}
+
+@media (min-width: 1360px) {
+  .super91-cards-grid:has(.super91-card:nth-child(4):last-child) .super91-card {
+    flex: 0 0 calc(25% - 24px) !important;
+    max-width: calc(25% - 24px) !important;
+  }
+}
+
+.super91-cards-grid.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.super91-cards-grid.drop-entrance .super91-card {
+  animation: super91-card-drop 1.45s var(--drop-delay, 0ms) cubic-bezier(0.25, 1, 0.35, 1) backwards;
+}
+
+@keyframes super91-card-drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-400px) rotate(10deg) scale(0.85);
+  }
+  60% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .super91-cards-grid.drop-entrance .super91-card {
+    animation: none;
+  }
+}
+
+/* 4. Super91 Card Base Structure (Spacious, Uncongested & Balanced) */
+.super91-card {
+  --reveal-x: 50%;
+  --reveal-y: 50%;
+  --service-card-image: none;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 270px;
+  padding: 32px 26px;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 16px 36px -12px rgba(48, 37, 31, 0.24), 0 2px 6px rgba(0, 0, 0, 0.08);
+  transform: translateY(0) scale(1);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.65s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 1024px) {
+  .super91-card {
+    min-height: 310px;
+    padding: 36px 30px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .super91-card {
+    min-height: 330px;
+    padding: 34px 26px;
+  }
+}
+
+.super91-card:hover {
+  transform: translateY(-7px) scale(1.02);
+  box-shadow: 0 26px 52px -12px rgba(48, 37, 31, 0.38), 0 0 32px -6px var(--card-accent, rgba(184, 138, 68, 0.45));
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.super91-card:active {
+  transform: translateY(-2px) scale(0.99);
+}
+
+/* 5. Circular Radial Reveal Image Layer (The Exact Super91 Hover Physics) */
+.super91-card-hover-image {
+  position: absolute;
+  z-index: 0;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  background-image: var(--service-card-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0;
+  clip-path: circle(0% at var(--reveal-x) var(--reveal-y));
+  transform: scale(1.08);
+  filter: saturate(1.08) contrast(1.04);
+  border-radius: inherit;
+  transition: clip-path 0.95s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease 0.1s, transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.super91-card-hover-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.75) 100%);
+  pointer-events: none;
+}
+
+/* Specular light highlight that sweeps across from cursor */
+.super91-card-hover-image::after {
+  content: "";
+  position: absolute;
+  top: -30%;
+  right: -30%;
+  bottom: -30%;
+  left: -30%;
+  background: radial-gradient(
+    circle at var(--reveal-x) var(--reveal-y),
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.1) 20%,
+    transparent 45%
+  );
+  filter: blur(12px);
+  mix-blend-mode: screen;
+  opacity: 0;
+  transform: scale(0.72) rotate(-8deg);
+  transition: opacity 0.6s ease, transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.super91-card:hover .super91-card-hover-image {
+  opacity: 1;
+  clip-path: circle(92% at var(--reveal-x) var(--reveal-y));
+  transform: scale(1.015);
+  transition: clip-path 0.95s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.super91-card:hover .super91-card-hover-image::after {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+}
+
+/* 6. Giant Watermark Icon Inside Card */
+.super91-card-watermark-wrapper {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: -35px;
+  transform: translateY(-50%) rotate(-8deg);
+  opacity: 0.15;
+  transition: opacity 0.5s ease, transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.super91-card:hover .super91-card-watermark-wrapper {
+  opacity: 0.08;
+  transform: translateY(-50%) translate(-10px) rotate(0) scale(1.05);
+}
+
+.super91-card-watermark-icon {
+  width: 170px;
+  height: 170px;
+  color: #ffffff;
+}
+
+/* 7. Foreground Content & Typography */
+.super91-card-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  transition: transform 0.4s ease, text-shadow 0.35s ease;
+}
+
+.super91-card:hover .super91-card-inner {
+  transform: translateY(-3px);
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.65);
+}
+
+.super91-card-icon-badge {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.super91-card:hover .super91-card-icon-badge {
+  transform: scale(1.08);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.super91-card-arrow-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 11px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.super91-card:hover .super91-card-arrow-pill {
+  background: rgba(0, 0, 0, 0.35);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.super91-card-title {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.18;
+  margin: 6px 0 2px;
+}
+
+.super91-card-subtitle {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0.88;
+}
+
+.super91-card-desc {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  font-weight: 400;
+}
+
+/* =========================================================================
+   8. DOCKED TOP STICKY BAR & FLIGHT TRANSITION (WHEN TAPPED)
+   ========================================================================= */
+
+.super91-sticky-sub-nav {
+  position: sticky;
+  top: 76px;
+  z-index: 50;
+  width: 100%;
+  background: rgba(246, 239, 227, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(48, 37, 31, 0.12);
+  box-shadow: 0 8px 30px rgba(48, 37, 31, 0.08);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .super91-sticky-sub-nav {
+    top: 64px;
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+}
+
+.super91-sticky-links-track {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 2px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.super91-sticky-links-track::-webkit-scrollbar {
+  display: none;
+}
+
+.super91-nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  color: #ffffff;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.super91-nav-pill:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.super91-nav-pill.active {
+  background: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15), 0 0 0 2px var(--pill-color, #a65335);
+  font-weight: 700;
+  transform: scale(1.03);
+}
+
+/* Stabilize sticky nav during clone flight to prevent scroll drift */
+.super91-sticky-sub-nav.morphing-target {
+  position: relative !important;
+  top: auto !important;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Hide original cards during clone flight while preserving layout height */
+.super91-cards-grid.is-morphing-out .super91-card {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.2s ease;
+}
+
+/* Morph Flying Clone (Container-relative, pure 60fps interpolation to pill position) */
+.super91-morph-clone {
+  position: absolute;
+  z-index: 100;
+  border-radius: 20px;
+  pointer-events: none;
+  transform-origin: top left;
+  transition: top 0.72s cubic-bezier(0.16, 1, 0.3, 1),
+              left 0.72s cubic-bezier(0.16, 1, 0.3, 1),
+              width 0.72s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.72s cubic-bezier(0.16, 1, 0.3, 1),
+              border-radius 0.72s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  will-change: top, left, width, height, border-radius;
+  opacity: 1;
+}
+
+.super91-morph-clone-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.4s ease 0.2s;
+}
+
+.super91-morph-clone.fading-out {
+  opacity: 0;
+  transition: opacity 0.2s ease-out !important;
+}
