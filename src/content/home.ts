@@ -132,17 +132,17 @@ export const homeContent: HomeContent = {
     },
   },
   welcome: {
-    eyebrow: "WELCOME TO RETIVAA",
+    eyebrow: "WELCOME TO RETIVAA DESERT CAMP",
     headline: "A quieter way to experience Jaisalmer.",
     narrative:
-      "RETIVAA is a desert camp shaped around the simple pleasures of the Thar — staying close to the dunes, watching the light change across the sand, and spending evenings with the music and warmth of Rajasthan.",
+      "RETIVAA DESERT CAMP is a desert camp shaped around the simple pleasures of the Thar — staying close to the dunes, watching the light change across the sand, and spending evenings with the music and warmth of Rajasthan.",
     cta: {
       label: "Discover the experience",
       href: "#experience-pillars",
     },
     image: {
       src: "/images/gallery/camp-daytime-amphitheater.jpg",
-      alt: "Daytime view of RETIVAA luxury desert camp featuring circular amphitheater, lush lawn, and rows of pristine swiss tents",
+      alt: "Daytime view of RETIVAA DESERT CAMP luxury desert camp featuring circular amphitheater, lush lawn, and rows of pristine swiss tents",
     },
     pillars: [
       {
@@ -182,7 +182,7 @@ export const homeContent: HomeContent = {
     },
     image: {
       src: "/images/gallery/tent-bedroom-suite.jpg",
-      alt: "Luxury royal canvas tent suite at RETIVAA with plush king bed, striped canopy, and air conditioning",
+      alt: "Luxury royal canvas tent suite at RETIVAA DESERT CAMP with plush king bed, striped canopy, and air conditioning",
       caption: "STAY · RELAX · RECONNECT",
     },
     highlights: [
@@ -204,7 +204,7 @@ export const homeContent: HomeContent = {
     ],
     mainImage: {
       src: "/images/gallery/tent-bedroom-suite.jpg",
-      alt: "Luxury royal canvas tent suite at RETIVAA with plush king bed, striped canopy, and air conditioning",
+      alt: "Luxury royal canvas tent suite at RETIVAA DESERT CAMP with plush king bed, striped canopy, and air conditioning",
       caption: "STAY · RELAX · RECONNECT",
     },
     detailImage: {
@@ -253,11 +253,11 @@ export const homeContent: HomeContent = {
       id: "desert-hero",
       title: "Hero Showcase",
       plannedPurpose:
-        "Cinematic presentation of the Thar Desert horizon, introducing RETIVAA's landscape with the primary enquiry CTA and exploration link.",
+        "Cinematic presentation of the Thar Desert horizon, introducing RETIVAA DESERT CAMP's landscape with the primary enquiry CTA and exploration link.",
     },
     {
       id: "welcome-section",
-      title: "Welcome to Retivaa",
+      title: "Welcome to Retivaa Desert Camp",
       plannedPurpose:
         "Editorial narrative introducing the luxury desert hospitality philosophy rooted in Jaisalmer's timeless heritage.",
     },

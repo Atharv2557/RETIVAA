@@ -26,7 +26,7 @@ export function WelcomeSection() {
 
   // Split narrative into semantic lines for line-by-line mask reveal
   const narrativeLines = [
-    "RETIVAA is a desert camp shaped around the simple",
+    "RETIVAA DESERT CAMP is a desert camp shaped around the simple",
     "pleasures of the Thar — staying close to the dunes,",
     "watching the light change across the sand, and spending",
     "evenings with the music and warmth of Rajasthan.",

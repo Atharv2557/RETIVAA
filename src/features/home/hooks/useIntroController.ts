@@ -93,7 +93,7 @@ export function useIntroController(): UseIntroControllerReturn {
 
     const isWhatsAppConfigured = isConfigured(siteConfig.contact.whatsapp);
     const whatsappUrl = getWhatsAppEnquiryUrl(
-      "Namaste RETIVAA, I would like to enquire about staying at your desert camp in Jaisalmer."
+      "Khamma Ghani RETIVAA Desert Camp, I would like to enquire about staying at your desert camp in Jaisalmer."
     );
 
     if (isWhatsAppConfigured && whatsappUrl) {

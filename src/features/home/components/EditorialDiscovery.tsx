@@ -140,7 +140,7 @@ export function EditorialDiscovery() {
     <section
       id="editorial-discovery"
       ref={sectionRef}
-      aria-label="The RETIVAA Experience"
+      aria-label="The RETIVAA DESERT CAMP Experience"
       className="scroll-mt-16 bg-[#F6EFE3] text-[#30251F] relative select-none"
     >
       {/* Ambient Warm Atmosphere Glows */}

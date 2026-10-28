@@ -124,16 +124,16 @@ export function DesertExperiencesSection() {
       />
 
       <Container className="h-full px-4 sm:px-6">
-        <div className="flex flex-col lg:flex-row items-center justify-center h-full gap-4 lg:gap-16 pt-20 lg:pt-0 pb-12 lg:pb-0">
+        <div className="flex flex-col lg:flex-row items-center justify-center h-full gap-3 sm:gap-6 lg:gap-16 pt-14 sm:pt-20 lg:pt-0 pb-8 sm:pb-12 lg:pb-0">
           
           {/* ========================================================================
               LEFT/BOTTOM: Dynamic Text Block
               Order is 2 on mobile (bottom), 1 on desktop (left)
               ======================================================================== */}
-          <div className="w-full lg:w-[45%] h-[35svh] lg:h-full relative flex items-center justify-center z-20 order-2 lg:order-1">
+          <div className="w-full lg:w-[45%] h-[36svh] lg:h-full relative flex items-center justify-center z-20 order-2 lg:order-1">
             
             {/* Global Eyebrow for the whole section */}
-            <div className="absolute top-2 lg:top-[30%] left-0 w-full flex items-center gap-3">
+            <div className="absolute top-1 sm:top-2 lg:top-[30%] left-0 w-full flex items-center gap-3">
               <TextReveal
                 as="span"
                 variant="eyebrow"
@@ -145,19 +145,19 @@ export function DesertExperiencesSection() {
             </div>
 
             {/* Stacked Dynamic Texts */}
-            <div className="relative w-full h-[180px] sm:h-[220px] lg:h-[300px] mt-10 lg:mt-0">
+            <div className="relative w-full h-[160px] sm:h-[220px] lg:h-[300px] mt-8 sm:mt-10 lg:mt-0">
               {content.experiences.map((exp, i) => (
                 <div
                   key={`text-${exp.id}`}
                   className="text-block absolute inset-0 flex flex-col justify-center"
                 >
-                  <span className="font-mono text-xs lg:text-sm tracking-[0.3em] font-medium text-[#B88A44] mb-2 lg:mb-4">
+                  <span className="font-mono text-xs lg:text-sm tracking-[0.3em] font-medium text-[#B88A44] mb-1.5 sm:mb-2 lg:mb-4">
                     0{i + 1}
                   </span>
-                  <h3 className="font-serif text-[28px] sm:text-4xl lg:text-[4rem] font-normal leading-[1.1] text-[#F6EFE3] mb-3 lg:mb-6 uppercase drop-shadow-md">
+                  <h3 className="font-serif text-2xl xs:text-3xl sm:text-4xl lg:text-[4rem] font-normal leading-[1.1] text-[#F6EFE3] mb-2 sm:mb-3 lg:mb-6 uppercase drop-shadow-md">
                     {exp.title}
                   </h3>
-                  <p className="text-[#D7B98E]/80 text-[13px] sm:text-sm lg:text-base leading-relaxed font-light max-w-sm lg:max-w-md">
+                  <p className="text-[#D7B98E]/80 text-xs sm:text-sm lg:text-base leading-relaxed font-light max-w-sm lg:max-w-md line-clamp-3 sm:line-clamp-none">
                     {exp.description}
                   </p>
                 </div>
@@ -169,15 +169,15 @@ export function DesertExperiencesSection() {
               RIGHT/TOP: Calendar Page Flip 3D Stage
               Order is 1 on mobile (top), 2 on desktop (right)
               ======================================================================== */}
-          <div className="w-full lg:w-[55%] h-[45svh] lg:h-full flex items-center justify-center relative perspective-[1500px] perspective-origin-center z-10 order-1 lg:order-2">
+          <div className="w-full lg:w-[55%] h-[44svh] lg:h-full flex items-center justify-center relative perspective-[1500px] perspective-origin-center z-10 order-1 lg:order-2">
             
             {/* The Binder / Rings visual */}
-            <div className="absolute top-[5%] lg:top-[12%] xl:top-[15%] left-1/2 -translate-x-1/2 w-[70%] max-w-[280px] lg:max-w-[400px] h-4 flex justify-between px-6 lg:px-10 z-30 pointer-events-none opacity-50">
+            <div className="absolute top-[3%] sm:top-[5%] lg:top-[12%] xl:top-[15%] left-1/2 -translate-x-1/2 w-[70%] max-w-[260px] sm:max-w-[280px] lg:max-w-[400px] h-4 flex justify-between px-6 lg:px-10 z-30 pointer-events-none opacity-50">
                <div className="w-2.5 lg:w-3.5 h-6 lg:h-8 bg-gradient-to-b from-[#B88A44] to-[#4A3022] rounded-full shadow-lg" />
                <div className="w-2.5 lg:w-3.5 h-6 lg:h-8 bg-gradient-to-b from-[#B88A44] to-[#4A3022] rounded-full shadow-lg" />
             </div>
 
-            <div className="relative w-[90%] max-w-[340px] sm:max-w-[400px] lg:max-w-[550px] aspect-[4/5] rounded-md shadow-2xl">
+            <div className="relative w-[88%] max-w-[310px] sm:max-w-[400px] lg:max-w-[550px] aspect-[4/5] rounded-md shadow-2xl">
               {content.experiences.map((exp, i) => (
                 <div
                   key={`photo-${exp.id}`}

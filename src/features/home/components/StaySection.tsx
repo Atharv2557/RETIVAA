@@ -456,11 +456,11 @@ export function StaySection() {
             {/* -------------------------------------------------------------- */}
             <div className="order-4 lg:order-4 lg:col-span-5 lg:col-start-1 lg:row-start-3 pt-4 text-left">
               <TextReveal variant="cta">
-                <div className="flex flex-wrap items-center gap-8 sm:gap-10 md:gap-12 lg:gap-14">
+                <div className="flex flex-wrap items-center gap-4 sm:gap-6 md:gap-8 lg:gap-10">
                 {/* Primary Button CTA: Explore The Stay */}
                 <Link
                   href={stay.primaryCta.href}
-                  className="group/cta inline-flex items-center gap-3.5 rounded-full bg-[#241C18] px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#FAF6F0] transition-all duration-300 hover:bg-[#382D27] active:scale-95 focus-visible:outline-2 focus-visible:outline-[#B88A44]"
+                  className="group/cta inline-flex items-center gap-3.5 rounded-full bg-[#241C18] px-6 sm:px-8 py-3 sm:py-3.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#FAF6F0] transition-all duration-300 hover:bg-[#382D27] active:scale-95 focus-visible:outline-2 focus-visible:outline-[#B88A44]"
                 >
                   <span>{stay.primaryCta.label}</span>
                   <ArrowRight
@@ -472,10 +472,10 @@ export function StaySection() {
                 {/* Secondary Button CTA: Watch Video */}
                 <button
                   onClick={openVideo}
-                  aria-label="Watch RETIVAA desert video"
-                  className="group/video inline-flex items-center gap-3 text-xs font-semibold tracking-[0.16em] uppercase text-[#28201C] hover:text-[#A65335] transition-colors focus-visible:outline-2 focus-visible:outline-[#B88A44] rounded-full"
+                  aria-label="Watch Retivaa Desert Camp video"
+                  className="group/video inline-flex items-center gap-3 text-xs font-semibold tracking-[0.16em] uppercase text-[#28201C] hover:text-[#A65335] transition-colors focus-visible:outline-2 focus-visible:outline-[#B88A44] rounded-full cursor-pointer"
                 >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[#28201C]/40 bg-transparent transition-all duration-300 group-hover/video:border-[#A65335] group-hover/video:scale-105 group-hover/video:bg-[#A65335]/10">
+                  <span className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-[#28201C]/40 bg-transparent transition-all duration-300 group-hover/video:border-[#A65335] group-hover/video:scale-105 group-hover/video:bg-[#A65335]/10">
                     <Play
                       size={12}
                       fill="currentColor"

@@ -51,7 +51,7 @@ export interface ExperiencesSectionContent {
 }
 
 export const EXPERIENCES_CONTENT: ExperiencesSectionContent = {
-  eyebrow: "THE RETIVAA EXPERIENCE",
+  eyebrow: "THE RETIVAA DESERT CAMP EXPERIENCE",
   heading: "Five ways to feel Rajasthan.",
   introduction:
     "Stay beneath canvas, explore the dunes, and discover evenings shaped by food, music and desert skies.",
@@ -77,7 +77,7 @@ export const EXPERIENCES_CONTENT: ExperiencesSectionContent = {
       pricingNote: "LUXURY TENT STAY · ENQUIRE FOR DETAILS",
       image: {
         src: "/images/gallery/tent-bedroom-suite.jpg",
-        alt: "Handcrafted luxury canvas tent suite with king bed, striped canopy, and air conditioning at RETIVAA",
+        alt: "Handcrafted luxury canvas tent suite with king bed, striped canopy, and air conditioning at RETIVAA DESERT CAMP",
       },
       photoCaption: "Accommodation in Tent",
       ctaLabel: "Enquire about your stay ↗",
@@ -175,7 +175,7 @@ export const EXPERIENCES_CONTENT: ExperiencesSectionContent = {
       pricingNote: "CAMP HI-TEA & DINNER · ENQUIRE FOR DETAILS",
       image: {
         src: "/images/gallery/dining-hall-interior.jpg",
-        alt: "Spacious indoor dining hall with polished wooden tables and woven hanging lanterns at RETIVAA",
+        alt: "Spacious indoor dining hall with polished wooden tables and woven hanging lanterns at RETIVAA DESERT CAMP",
       },
       photoCaption: "Hi-Tea · Dinner · Breakfast",
       ctaLabel: "Enquire about dining ↗",
@@ -206,7 +206,7 @@ export const EXPERIENCES_CONTENT: ExperiencesSectionContent = {
       pricingNote: "CULTURAL EVENING · ENQUIRE FOR DETAILS",
       image: {
         src: "/images/gallery/culture-campfire-fire-show.jpg",
-        alt: "Spectacular Kalbelia fire-breathing performance lighting the desert campfire night at RETIVAA",
+        alt: "Spectacular Kalbelia fire-breathing performance lighting the desert campfire night at RETIVAA DESERT CAMP",
       },
       alternativeImage: {
         src: "/images/gallery/culture-folk-ensemble-moonlight.jpg",

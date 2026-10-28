@@ -57,7 +57,7 @@ export const HERO_TRACK_ITEMS: readonly HeroTrackItem[] = [
   {
     id: "starlit-camp-sanctuary",
     src: "/images/gallery/camp-starlit-panorama.jpg",
-    alt: "Panoramic starry night view of Retivaa desert camp with red carpet and central fountain",
+    alt: "Panoramic starry night view of Retivaa Desert Camp with red carpet and central fountain",
     title: "Starlit Camp Sanctuary",
     subtitle: "Celestial desert oasis beneath millions of Thar stars",
     tag: "Night Panorama",
@@ -274,7 +274,7 @@ export function HeroPhotoTrack({
       tabIndex={0}
     >
       {/* 1. 3D Stacked Photo Cards Container */}
-      <div className="relative w-full h-[320px] sm:h-[350px] md:h-[430px] lg:h-[490px] flex items-center justify-center overflow-visible">
+      <div className="relative w-full h-[290px] xs:h-[320px] sm:h-[350px] md:h-[430px] lg:h-[490px] flex items-center justify-center overflow-visible">
         {visibleCards.map(({ item, index, offset }) => {
           const isCurrent = offset === 0;
           const absOffset = Math.abs(offset);
@@ -283,7 +283,7 @@ export function HeroPhotoTrack({
           return (
             <motion.div
               key={item.id}
-              className={`absolute left-1/2 top-1/2 w-[66vw] max-w-[270px] h-[280px] sm:h-[310px] cursor-grab active:cursor-grabbing overflow-hidden rounded-lg border border-[#FAF6F0]/25 shadow-[0_16px_36px_-10px_rgba(0,0,0,0.65)] group ${sizeClass} md:h-auto md:max-w-none will-change-transform`}
+              className={`absolute left-1/2 top-1/2 w-[72vw] max-w-[270px] h-[260px] xs:h-[280px] sm:h-[310px] cursor-grab active:cursor-grabbing overflow-hidden rounded-lg border border-[#FAF6F0]/25 shadow-[0_16px_36px_-10px_rgba(0,0,0,0.65)] group ${sizeClass} md:h-auto md:max-w-none will-change-transform`}
               initial={false}
               animate={{
                 x: `calc(-50% + ${offset * trackSpacing}px)`,
@@ -353,7 +353,7 @@ export function HeroPhotoTrack({
                 <div className="absolute bottom-0 inset-x-0 p-3.5 sm:p-5 text-left z-10 pointer-events-none">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#E4C198] flex items-center gap-1.5">
                     <Compass size={11} className="text-[#E4C198]" />
-                    {pad(index + 1)} · RETIVAA EXPERIENCE
+                    {pad(index + 1)} · RETIVAA DESERT CAMP EXPERIENCE
                   </p>
                   <h3 className="mt-0.5 font-serif text-base sm:text-xl font-normal text-[#FAF6F0] leading-tight drop-shadow-sm">
                     {item.title}

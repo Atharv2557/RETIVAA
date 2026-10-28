@@ -318,19 +318,19 @@ export function FullScreenMenu() {
         }}
       >
         {/* Top Header Bar inside Menu (Position-aligned with SiteHeader) */}
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 sm:h-20 shrink-0">
-          {/* RETIVAA Wordmark */}
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-14 sm:h-20 shrink-0">
+          {/* RETIVAA DESERT CAMP Wordmark */}
           <Link
             ref={firstFocusableRef}
             href="/"
             onClick={(e) => handleLinkClick(e, "/")}
-            className="group flex flex-col focus-visible:outline-2 focus-visible:outline-[#B88A44] rounded-xs"
+            className="group flex flex-col focus-visible:outline-2 focus-visible:outline-[#B88A44] rounded-xs min-w-0"
             aria-label={`${siteConfig.brand.name} - Return to homepage`}
           >
-            <span className={`font-serif text-2xl sm:text-3xl font-medium tracking-[0.24em] uppercase transition-colors ${brandText}`}>
+            <span className={`font-serif text-sm xs:text-base sm:text-xl md:text-2xl lg:text-3xl font-medium tracking-[0.14em] sm:tracking-[0.24em] uppercase transition-colors truncate ${brandText}`}>
               {siteConfig.brand.name}
             </span>
-            <span className={`text-[9px] sm:text-[10px] uppercase tracking-[0.35em] font-medium ${brandSubtitle}`}>
+            <span className={`text-[8px] sm:text-[10px] uppercase tracking-[0.3em] sm:tracking-[0.35em] font-medium ${brandSubtitle}`}>
               Jaisalmer
             </span>
           </Link>

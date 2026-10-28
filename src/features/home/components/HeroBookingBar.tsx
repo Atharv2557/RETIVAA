@@ -1,13 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Calendar, Users, BedDouble, ArrowUpRight } from "lucide-react";
 import { getWhatsAppEnquiryUrl } from "@/config/site.config";
 
 export function HeroBookingBar() {
-  const router = useRouter();
 
   // Default dates
   const today = new Date();
@@ -24,13 +22,9 @@ export function HeroBookingBar() {
   const [guests, setGuests] = useState("2 Guests");
 
   const handleBookingEnquiry = () => {
-    const text = `Namaste RETIVAA, I would like to check availability for the ${suiteType} from ${checkIn} to ${checkOut} for ${guests}.`;
-    const url = getWhatsAppEnquiryUrl(text);
-    if (url) {
-      window.open(url, "_blank", "noopener,noreferrer");
-    } else {
-      router.push(`/contact?suite=${encodeURIComponent(suiteType)}&in=${checkIn}&out=${checkOut}&guests=${encodeURIComponent(guests)}`);
-    }
+    const text = `Khamma Ghani RETIVAA Desert Camp, I would like to check availability for the ${suiteType} from ${checkIn} to ${checkOut} for ${guests}.`;
+    const url = getWhatsAppEnquiryUrl(text) || `https://wa.me/918107817873?text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -38,7 +32,7 @@ export function HeroBookingBar() {
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1.35, duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-      className="w-full max-w-5xl mx-auto mt-10 lg:mt-14"
+      className="w-full max-w-5xl mx-auto mt-8 sm:mt-10 lg:mt-14"
       role="region"
       aria-label="Direct Camp Availability and Reservation Concierge"
     >

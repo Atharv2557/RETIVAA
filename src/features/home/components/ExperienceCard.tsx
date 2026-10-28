@@ -16,7 +16,7 @@ interface ExperienceCardProps {
   readonly isReducedMotion?: boolean;
 }
 
-export function ExperienceCard({ item, isMobile = false, index, isActive, isReducedMotion }: ExperienceCardProps) {
+export function ExperienceCard({ item, isMobile = false }: ExperienceCardProps) {
   const itemNumber =
     "number" in item && item.number
       ? item.number
@@ -32,7 +32,7 @@ export function ExperienceCard({ item, isMobile = false, index, isActive, isRedu
 
   const isWhatsAppReady = isConfigured(siteConfig.contact.whatsapp);
   const whatsappUrl = getWhatsAppEnquiryUrl(
-    `Namaste RETIVAA, I would like to enquire about ${item.title} in Jaisalmer.`
+    `Khamma Ghani RETIVAA Desert Camp, I would like to enquire about ${item.title} in Jaisalmer.`
   );
   const targetHref = itemHref || (isWhatsAppReady && whatsappUrl ? whatsappUrl : "/contact");
   const isExternal = targetHref.startsWith("http");

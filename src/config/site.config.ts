@@ -44,7 +44,7 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   brand: {
-    name: "RETIVAA",
+    name: "RETIVAA DESERT CAMP",
     tagline: "Where the dunes become your home.",
     location: "Jaisalmer, Rajasthan, India",
     region: "Thar Desert",
@@ -54,9 +54,8 @@ export const siteConfig: SiteConfig = {
       "A premium desert camp retreat in the Thar Desert of Jaisalmer, Rajasthan, offering luxury tented stays, desert safaris, and authentic cultural evenings.",
   },
   contact: {
-    // Exact placeholder values as required by project specifications:
-    whatsapp: "[WHATSAPP NUMBER WITH COUNTRY CODE]",
-    phone: "[PHONE NUMBER]",
+    whatsapp: "+918107817873",
+    phone: "+91 81078 17873",
     email: "[EMAIL ADDRESS]",
     address: "[EXACT CAMP LOCATION]",
     directionsUrl: "[MAP DIRECTIONS URL]",
@@ -94,8 +93,8 @@ export function getWhatsAppEnquiryUrl(message?: string): string | null {
     return null;
   }
 
-  // Clean non-digit characters except leading plus
-  const sanitizedNumber = siteConfig.contact.whatsapp.replace(/[^\d+]/g, "");
+  // Clean non-digit characters so number is pure digits without plus sign
+  const sanitizedNumber = siteConfig.contact.whatsapp.replace(/[^\d]/g, "");
   const encodedText = message ? `?text=${encodeURIComponent(message)}` : "";
   return `https://wa.me/${sanitizedNumber}${encodedText}`;
 }

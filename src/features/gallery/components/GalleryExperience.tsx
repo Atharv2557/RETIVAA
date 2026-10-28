@@ -10,8 +10,7 @@ import {
   Flame, 
   ArrowLeft,
   X,
-  Maximize2,
-  ChevronRight
+  Maximize2
 } from "lucide-react";
 import { useLenis } from "lenis/react";
 import { GalleryCategory, GalleryImage } from "../types";
@@ -375,7 +374,7 @@ export function GalleryExperience({ categories, images }: GalleryExperienceProps
                     <div className="absolute inset-0 bg-gradient-to-t from-[#30251F]/80 via-[#30251F]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
                       <div className="transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
                         <span className="text-[10px] tracking-widest uppercase font-semibold text-[#B88A44] block mb-1">
-                          RETIVAA EXCLUSIVE
+                          RETIVAA DESERT CAMP EXCLUSIVE
                         </span>
                         <h4 className="text-white font-serif text-lg leading-tight mb-1">
                           {img.title}

@@ -34,7 +34,7 @@ This directory encapsulates all booking enquiry controls, form logic, date valid
 - **Submission Action**:
   - On valid submission, serializes form data into a structured, readable, URL-encoded WhatsApp query string:
     ```
-    Namaste RETIVAA Team,
+    Khamma Ghani RETIVAA Team,
     I would like to enquire about staying at your desert camp:
     - Guest: [Name]
     - Dates: [Check-in] to [Check-out]

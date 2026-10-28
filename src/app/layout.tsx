@@ -33,7 +33,8 @@ export const metadata: Metadata = {
   },
   description: siteConfig.brand.description,
   keywords: [
-    "RETIVAA",
+    "RETIVAA DESERT CAMP",
+    "Retivaa Desert Camp",
     "Jaisalmer desert camp",
     "luxury tent stay Jaisalmer",
     "Thar desert safari",

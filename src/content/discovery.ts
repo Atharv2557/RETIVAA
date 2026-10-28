@@ -37,7 +37,7 @@ export interface DiscoverySectionContent {
 
 export const DISCOVERY_CONTENT: DiscoverySectionContent = {
   intro: {
-    eyebrow: "DISCOVER RETIVAA",
+    eyebrow: "DISCOVER RETIVAA DESERT CAMP",
     heading: "Three ways to feel the desert.",
     supportingLine:
       "Stay close to the sands, follow the open horizon, and experience the warmth of Rajasthan.",
@@ -50,7 +50,7 @@ export const DISCOVERY_CONTENT: DiscoverySectionContent = {
       eyebrow: "01 / STAY",
       headingLines: ["A slower stay.", "A different world."],
       leadParagraph:
-        "Make room for a different rhythm in Jaisalmer. A tent stay at RETIVAA brings your journey closer to the sands and the spirit of Rajasthan.",
+        "Make room for a different rhythm in Jaisalmer. A tent stay at RETIVAA DESERT CAMP brings your journey closer to the sands and the spirit of Rajasthan.",
       supportingParagraph:
         "Let your stay become the starting point for time among the dunes and evenings around the camp. Ask us about accommodation arrangements and the experiences available during your visit.",
       featureLine: "Accommodation in Tent",
@@ -59,11 +59,11 @@ export const DISCOVERY_CONTENT: DiscoverySectionContent = {
         href: "/contact",
         isWhatsApp: true,
         whatsappPrompt:
-          "Hello RETIVAA, I would like to enquire about tent stay accommodation and arrangements in Jaisalmer.",
+          "Khamma Ghani RETIVAA Desert Camp, I would like to enquire about tent stay accommodation and arrangements in Jaisalmer.",
       },
       image: {
         src: "/images/gallery/tent-bedroom-suite.jpg",
-        alt: "Handcrafted luxury desert tent suite with king bed and lantern ambiance at RETIVAA",
+        alt: "Handcrafted luxury desert tent suite with king bed and lantern ambiance at RETIVAA DESERT CAMP",
         objectPosition: "center 45%",
       },
     },
@@ -83,7 +83,7 @@ export const DISCOVERY_CONTENT: DiscoverySectionContent = {
         href: "/contact",
         isWhatsApp: true,
         whatsappPrompt:
-          "Hello RETIVAA, I would like to enquire about camel safaris, dune sunsets and jeep adventures in Jaisalmer.",
+          "Khamma Ghani RETIVAA Desert Camp, I would like to enquire about camel safaris, dune sunsets and jeep adventures in Jaisalmer.",
       },
       image: {
         src: "/images/gallery/safari-4x4-dune-bashing.jpg",
@@ -107,7 +107,7 @@ export const DISCOVERY_CONTENT: DiscoverySectionContent = {
         href: "/contact",
         isWhatsApp: true,
         whatsappPrompt:
-          "Hello RETIVAA, I would like to plan a desert camp experience including folk music, cultural performances and campfire evenings.",
+          "Khamma Ghani RETIVAA Desert Camp, I would like to plan a desert camp experience including folk music, cultural performances and campfire evenings.",
       },
       image: {
         src: "/images/gallery/culture-campfire-fire-show.jpg",

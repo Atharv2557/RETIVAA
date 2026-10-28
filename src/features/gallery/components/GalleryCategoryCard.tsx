@@ -39,8 +39,8 @@ export function GalleryCategoryCard({ category, index, onClick, isCompact, isAct
     let imgYTo: gsap.QuickToFunc;
 
     const ctx = gsap.context(() => {
-      xTo = gsap.quickTo(imageWrapperRef.current, "--x", { duration: 0.6, ease: "power3.out" });
-      yTo = gsap.quickTo(imageWrapperRef.current, "--y", { duration: 0.6, ease: "power3.out" });
+      xTo = gsap.quickTo(imageWrapperRef.current, "--x", { duration: 0.6, ease: "power3.out", unit: "%" });
+      yTo = gsap.quickTo(imageWrapperRef.current, "--y", { duration: 0.6, ease: "power3.out", unit: "%" });
       imgXTo = gsap.quickTo(imageRef.current, "x", { duration: 0.8, ease: "power2.out" });
       imgYTo = gsap.quickTo(imageRef.current, "y", { duration: 0.8, ease: "power2.out" });
 
@@ -72,8 +72,8 @@ export function GalleryCategoryCard({ category, index, onClick, isCompact, isAct
       const relX = ((e.clientX - rect.left) / rect.width) * 100;
       const relY = ((e.clientY - rect.top) / rect.height) * 100;
       
-      xTo(`${relX}%` as any);
-      yTo(`${relY}%` as any);
+      xTo(relX);
+      yTo(relY);
 
       const normX = (e.clientX - rect.left) / rect.width * 2 - 1;
       const normY = (e.clientY - rect.top) / rect.height * 2 - 1;
@@ -82,7 +82,7 @@ export function GalleryCategoryCard({ category, index, onClick, isCompact, isAct
       imgYTo(normY * -10);
     };
 
-    const handleMouseLeave = (e: MouseEvent) => {
+    const handleMouseLeave = () => {
       gsap.to(imageWrapperRef.current, {
         "--mask-size": "0%",
         duration: 0.6,

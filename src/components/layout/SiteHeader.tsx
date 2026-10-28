@@ -55,7 +55,7 @@ export function SiteHeader() {
   // Enquiry link target & behavior
   const isWhatsAppReady = isConfigured(siteConfig.contact.whatsapp);
   const whatsappUrl = getWhatsAppEnquiryUrl(
-    "Namaste RETIVAA, I would like to enquire about staying at your desert camp in Jaisalmer."
+    "Khamma Ghani RETIVAA Desert Camp, I would like to enquire about staying at your desert camp in Jaisalmer."
   );
   const enquiryHref = isWhatsAppReady && whatsappUrl ? whatsappUrl : "/contact";
   const enquiryTarget = isWhatsAppReady && whatsappUrl ? "_blank" : undefined;
@@ -69,38 +69,38 @@ export function SiteHeader() {
         paddingTop: "max(0.5rem, env(safe-area-inset-top, 0.5rem))",
       }}
     >
-      <div className="w-full px-5 sm:px-8 md:px-10 lg:px-12">
-        <div className="flex h-16 sm:h-20 items-center justify-between">
+      <div className="w-full px-3 xs:px-5 sm:px-8 md:px-10 lg:px-12">
+        <div className="flex h-14 sm:h-20 items-center justify-between">
           {/* Brand Wordmark */}
           <Link
             href="/"
             onClick={() => {
               if (isMenuOpen) toggleMenu();
             }}
-            className="group flex flex-col focus-visible:outline-2 focus-visible:outline-[#B88A44] rounded-xs transition-transform active:scale-[0.98]"
+            className="group flex flex-col focus-visible:outline-2 focus-visible:outline-[#B88A44] rounded-xs transition-transform active:scale-[0.98] min-w-0"
             aria-label={`${siteConfig.brand.name} - Return to homepage`}
           >
             <span
-              className={`font-serif text-2xl sm:text-3xl font-medium tracking-[0.24em] uppercase transition-colors duration-400 ${brandTextClass}`}
+              className={`font-serif text-sm xs:text-base sm:text-xl md:text-2xl lg:text-3xl font-medium tracking-[0.14em] sm:tracking-[0.24em] uppercase transition-colors duration-400 truncate ${brandTextClass}`}
             >
               {siteConfig.brand.name}
             </span>
             <span
-              className={`text-[9px] sm:text-[10px] uppercase tracking-[0.35em] font-medium transition-colors duration-400 ${brandSubtitleClass}`}
+              className={`text-[8px] sm:text-[10px] uppercase tracking-[0.3em] sm:tracking-[0.35em] font-medium transition-colors duration-400 ${brandSubtitleClass}`}
             >
               Jaisalmer
             </span>
           </Link>
 
           {/* Right Controls: Shifted to right-hand corner with refined spacing between them and from corner */}
-          <div className="flex items-center gap-3 sm:gap-5 lg:gap-6">
+          <div className="flex items-center gap-2 sm:gap-4 lg:gap-6 shrink-0">
             {/* Enquiry / Explore Stay Shortcut */}
             <a
               href={enquiryHref}
               target={enquiryTarget}
               rel={enquiryRel}
               aria-label="Enquire about luxury camp stay"
-              className={`inline-flex items-center justify-center rounded-sm px-3.5 sm:px-5 py-2 text-[11px] sm:text-xs font-semibold uppercase tracking-widest transition-all duration-300 min-h-[40px] sm:min-h-[44px] cursor-pointer focus-visible:outline-2 focus-visible:outline-[#B88A44] active:scale-[0.97] ${
+              className={`inline-flex items-center justify-center rounded-sm px-2.5 sm:px-5 py-1.5 sm:py-2 text-[10px] sm:text-xs font-semibold uppercase tracking-widest transition-all duration-300 min-h-[36px] sm:min-h-[44px] cursor-pointer focus-visible:outline-2 focus-visible:outline-[#B88A44] active:scale-[0.97] ${
                 isHeroTransparent || isMenuOpen
                   ? "border border-[#FAF6F0]/30 text-[#FAF6F0] hover:bg-[#FAF6F0] hover:text-[#191918] hover:border-transparent drop-shadow-sm"
                   : "bg-[#30251F] text-[#F6EFE3] hover:bg-[#B88A44]"
@@ -117,7 +117,7 @@ export function SiteHeader() {
               aria-expanded={isMenuOpen}
               aria-controls="fullscreen-navigation-menu"
               aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-              className={`flex items-center gap-2.5 sm:gap-3 px-3 sm:px-4 py-2 min-h-[40px] sm:min-h-[44px] min-w-[40px] sm:min-w-[44px] rounded-sm font-sans text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#B88A44] active:scale-[0.96] ${buttonTextClass}`}
+              className={`flex items-center gap-2 sm:gap-3 px-2.5 sm:px-4 py-1.5 sm:py-2 min-h-[36px] sm:min-h-[44px] min-w-[36px] sm:min-w-[44px] rounded-sm font-sans text-[10px] sm:text-xs font-semibold uppercase tracking-[0.18em] sm:tracking-[0.2em] transition-all duration-300 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#B88A44] active:scale-[0.96] ${buttonTextClass}`}
             >
               <span className="inline">
                 {isMenuOpen ? "Close" : "Menu"}

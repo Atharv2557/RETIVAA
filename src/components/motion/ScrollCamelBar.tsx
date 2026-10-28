@@ -262,7 +262,7 @@ export function ScrollCamelBar() {
       data-testid="scroll-camel-bar"
       className="fixed bottom-0 inset-x-0 z-40 select-none pointer-events-none pb-2 pt-1 transition-colors duration-700"
     >
-      <div className="relative mx-auto max-w-[1600px] px-4 sm:px-8 flex flex-col justify-center">
+      <div className="relative mx-auto max-w-[1600px] px-3 sm:px-8 flex flex-col justify-center">
         {/* Desert Track Line with Moving Trot Camel (Background Removed) */}
         <div
           ref={trackRef}
@@ -374,17 +374,18 @@ export function ScrollCamelBar() {
         </div>
 
         {/* Minimal Floating Metadata Row (Transparent, Never Obstructing Content) */}
-        <div className="mt-1 flex items-center justify-between text-[10px] tracking-[0.25em] uppercase font-medium select-none pointer-events-none drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+        <div className="mt-1 flex items-center justify-between text-[9px] xs:text-[10px] tracking-[0.16em] xs:tracking-[0.25em] uppercase font-medium select-none pointer-events-none drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
           {/* Left Side: North Compass & Label */}
-          <div className={`flex items-center gap-2 transition-colors duration-700 ${textColor}`}>
-            <div className="flex h-4 w-4 items-center justify-center rounded-full border border-current opacity-75">
-              <span className="text-[7px] font-bold">N</span>
+          <div className={`flex items-center gap-1.5 xs:gap-2 transition-colors duration-700 ${textColor}`}>
+            <div className="flex h-3.5 w-3.5 xs:h-4 xs:w-4 items-center justify-center rounded-full border border-current opacity-75">
+              <span className="text-[6.5px] xs:text-[7px] font-bold">N</span>
             </div>
-            <span className="font-sans font-semibold">SCROLL TO DISCOVER CAMP</span>
+            <span className="font-sans font-semibold hidden xs:inline">SCROLL TO DISCOVER CAMP</span>
+            <span className="font-sans font-semibold xs:hidden">CAMP DISCOVERY</span>
           </div>
 
           {/* Right Side: Progress & Coordinates */}
-          <div className={`flex items-center gap-4 transition-colors duration-700 ${subtextColor}`}>
+          <div className={`flex items-center gap-3 sm:gap-4 transition-colors duration-700 ${subtextColor}`}>
             <span ref={percentTextRef} className="font-mono font-bold tracking-wider">
               {percentDisplay}% EXPEDITION
             </span>

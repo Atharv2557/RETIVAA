@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Archivo_Black } from "next/font/google";
@@ -16,18 +16,15 @@ export interface CinematicMapProps {
   repeat?: number;
 }
 
-const emptySubscribe = () => () => {};
-
 export function CinematicMap({
-  ringText = "RETIVAA • JAISALMER • ",
+  ringText = "RETIVAA DESERT CAMP • JAISALMER • ",
   repeat,
 }: CinematicMapProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapWrapperRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState({ ringSize: 1040, fontSize: 46 });
-  const isClient = useSyncExternalStore(emptySubscribe, () => true, () => false);
 
-  const finalRepeat = repeat ?? (ringText.trim().length < 35 ? 4 : 1);
+  const finalRepeat = repeat ?? (ringText.trim().length <= 36 ? 3 : 1);
 
   useEffect(() => {
     const updateDimensions = () => {
@@ -76,7 +73,7 @@ export function CinematicMap({
   return (
     <div
       ref={containerRef}
-      className="relative w-full min-h-[820px] sm:min-h-[960px] lg:min-h-[1150px] flex flex-col items-center justify-center bg-[#191918] py-20 sm:py-28 lg:py-36 overflow-x-clip border-t border-[#D7B98E]/20 select-none"
+      className="relative w-full min-h-[640px] sm:min-h-[860px] lg:min-h-[1150px] flex flex-col items-center justify-center bg-[#191918] py-14 sm:py-24 lg:py-36 overflow-x-clip border-t border-[#D7B98E]/20 select-none"
     >
       {/* 1. BACKGROUND: Interactive 3D Circular Rotating Text (Covered in the center by the foreground map) */}
       <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none overflow-visible">
@@ -118,9 +115,9 @@ export function CinematicMap({
         />
 
         {/* 3. TOP OVERLAY: Floating Camp Details Card */}
-        <div className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6 z-30 p-4 sm:p-6 bg-[#FDFBF7]/95 backdrop-blur-md rounded-xs border border-[#B38B57]/40 shadow-2xl max-w-[220px] sm:max-w-[280px]">
-          <h4 className="font-serif text-base sm:text-xl text-[#201B18] tracking-wide mb-0.5 sm:mb-1">
-            RETIVAA
+        <div className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6 z-30 p-3 sm:p-6 bg-[#FDFBF7]/95 backdrop-blur-md rounded-xs border border-[#B38B57]/40 shadow-2xl max-w-[200px] xs:max-w-[240px] sm:max-w-[280px]">
+          <h4 className="font-serif text-sm sm:text-xl text-[#201B18] tracking-wide mb-0.5 sm:mb-1 uppercase font-semibold">
+            RETIVAA DESERT CAMP
           </h4>
           <p className="font-sans text-[8px] sm:text-[11px] tracking-[0.2em] text-[#8C2C30] uppercase mb-2">
             Sam Sand Dunes · Jaisalmer
